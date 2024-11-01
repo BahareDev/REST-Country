@@ -3,38 +3,18 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: "Nunito Sans Variable";
+  font-family: "Nunito Sans Variable";
   font-optical-sizing: auto;
   font-weight: 200 1000;
   font-style: normal;
   font-variation-settings: "wdth" 100, "YTLC" 500;
-  src: url(../assets/fonts/NunitoSans-VariableFont_YTLC/opsz/wdth/wght.ttf)
+  src: url(/assets/fonts/NunitoSans-VariableFont_YTLC\,opsz\,wdth\,wght.ttf)
     format("truetype");
 }
-
-/* @font-face {
-    font-family: "Nunito Sans Variable";
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings: "wdth" 100, "YTLC" 500;
-  src: url(../assets/fonts/NunitoSans-VariableFont_YTLC/opsz/wdth/wght.ttf)
-    format("truetype");
-}
-
-@font-face {
-    font-family: "Nunito Sans Variable";
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
-  font-variation-settings: "wdth" 100, "YTLC" 500;
-  src: url(../assets/fonts/NunitoSans-VariableFont_YTLC/opsz/wdth/wght.ttf)
-    format("truetype");
-} */
 
 body,
 button {
-  font-family: "NunitoSans";
+  font-family: "Nunito Sans Variable";
 }
 * {
   -webkit-user-select: none;

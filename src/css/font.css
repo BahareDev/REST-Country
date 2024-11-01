@@ -1,10 +1,10 @@
-@font-face {
+/* @font-face {
   font-family: "Nunito Sans", serif;
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
   font-variation-settings: "wdth" 100, "YTLC" 500;
-  src: url(/assets/fonts/NunitoSans-VariableFont_YTLC\,opsz\,wdth\,wght.ttf);
+  src: url(../assets/fonts/NunitoSans-VariableFont_YTLC/opsz/wdth/wght.ttf);
 }
 
 @font-face {
@@ -13,7 +13,7 @@
   font-weight: 400;
   font-style: normal;
   font-variation-settings: "wdth" 100, "YTLC" 500;
-  src: url(/assets/fonts/NunitoSans-VariableFont_YTLC\,opsz\,wdth\,wght.ttf);
+  src: url(../assets/fonts/NunitoSans-VariableFont_YTLC/opsz/wdth/wght.ttf);
 }
 
 @font-face {
@@ -22,12 +22,12 @@
   font-weight: 700;
   font-style: normal;
   font-variation-settings: "wdth" 100, "YTLC" 500;
-  src: url(/assets/fonts/NunitoSans-VariableFont_YTLC\,opsz\,wdth\,wght.ttf);
+  src: url(../assets/fonts/NunitoSans-VariableFont_YTLC/opsz/wdth/wght.ttf);
 }
 
 body,
 button {
-  font-family: "vazir";
+  font-family: "Nunito Sans";
 }
 * {
   -webkit-user-select: none;
@@ -36,7 +36,7 @@ button {
 /*  PREVENT TEXT SIZE SCALLING */
 
 /* iPhone, portrait & landscape. */
-@media all and (max-device-width: 480px) {
+/* @media all and (max-device-width: 480px) {
   html,
   body,
   p {
@@ -45,9 +45,9 @@ button {
     -moz-text-size-adjust: none !important;
     -ms-text-size-adjust: none !important;
   }
-}
+} */
 /* iPad, portrait & landscape. */
-@media all and (min-device-width: 768px) and (max-device-width: 1024px) {
+/* @media all and (min-device-width: 768px) and (max-device-width: 1024px) {
   html,
   body,
   p {
@@ -56,4 +56,4 @@ button {
     -moz-text-size-adjust: none !important;
     -ms-text-size-adjust: none !important;
   }
-}
+}  */

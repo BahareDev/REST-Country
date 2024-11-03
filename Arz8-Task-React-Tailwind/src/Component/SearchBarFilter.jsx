@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function SearchBarFilter({ onSearch }) {
+export default function SearchBarFilter({ onSearch, onFilter }) {
   function handleSearch(e) {
     onSearch(e.target.value);
   }
@@ -36,26 +36,30 @@ export default function SearchBarFilter({ onSearch }) {
 
         {/* Filter Menue  */}
         <div className="w-[180px] p-2 border shadow-md rounded-md border-gray-300">
-          <FilterMenu></FilterMenu>
+          <FilterMenu onFilter={onFilter}></FilterMenu>
         </div>
       </section>
     </>
   );
 }
 
-function FilterMenu() {
+function FilterMenu({ onFilter }) {
+  function handleFilter(e) {
+    onFilter(e.target.value);
+  }
   return (
     <>
       <form className="max-w-sm mx-auto">
         <select
           id="countries"
+          onChange={handleFilter}
           className="bg-gray-50 text-gray-900 text-sm rounded-lg block w-full outline-none"
         >
-          <option>Filter by Region</option>
-          <option value="">Africa</option>
-          <option value="">America</option>
-          <option value="">Asia</option>
-          <option value="">Oceania</option>
+          <option value="">Filter by Region</option>
+          <option value="Africa">Africa</option>
+          <option value="America">America</option>
+          <option value="Asia">Asia</option>
+          <option value="Oceania">Oceania</option>
         </select>
       </form>
     </>

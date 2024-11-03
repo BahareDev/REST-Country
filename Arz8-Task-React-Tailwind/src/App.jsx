@@ -11,6 +11,8 @@ export default function App() {
   const [loading, setLoading] = useState(true);
   const [erorr, setErorr] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
+  const [region, setfilter] = useState("");
+
   const CountryURL = `https://restcountries.com/v3.1/all`;
 
   useEffect(() => {
@@ -29,9 +31,17 @@ export default function App() {
     fetchData();
   }, []);
 
-  const filteredCountries = country.filter((item) =>
-    item.name?.common.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const filteredCountries = country.filter((item) => {
+    const matchsearch = item.name?.common
+      .toLowerCase()
+      .includes(searchQuery.toLowerCase());
+
+    const matchFilter = region ? item.region === region : true;
+
+    return matchsearch && matchFilter;
+  });
+
+  
 
   if (loading) return <p>loading countries data...</p>;
   if (erorr) return <p>{erorr}</p>;
@@ -41,7 +51,10 @@ export default function App() {
       <Header></Header>
 
       <main>
-        <SearchBarFilter onSearch={setSearchQuery}></SearchBarFilter>
+        <SearchBarFilter
+          onSearch={setSearchQuery}
+          onFilter={setfilter}
+        ></SearchBarFilter>
         <CountryList country={filteredCountries}></CountryList>
       </main>
     </>

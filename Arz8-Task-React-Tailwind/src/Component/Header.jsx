@@ -3,10 +3,11 @@ import React from "react";
 export default function Header() {
   return (
     <>
-      <header class="bg-white flex justify-between items-center h-20 p-4 shadow-md md:p-10 md:h-14">
-        <h1 class="font-extrabold">Where in the world?</h1>
+      <header className="bg-white flex justify-between items-center h-20 p-4 shadow-md md:p-10 md:h-14">
+        <h1 className="font-extrabold">Where in the world?</h1>
+        
         {/* <!-- DARK mode section --> */}
-        <div className="flex items-center ">
+        <div className="flex items-center cursor-pointer">
           <span>
             <svg
               xmlns="http://www.w3.org/2000/svg"

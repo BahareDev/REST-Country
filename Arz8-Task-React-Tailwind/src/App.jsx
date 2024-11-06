@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
+
 import Header from "./Component/Header";
 import SearchBarFilter from "./Component/SearchBarFilter";
 import CountryList from "./Component/CountryList";
@@ -28,7 +30,6 @@ export default function App() {
         setLoading(false);
       }
     };
-
     fetchData();
   }, []);
 
@@ -42,19 +43,34 @@ export default function App() {
     return matchsearch && matchFilter;
   });
 
+  const location = useLocation();
   if (loading) return <p>loading countries data...</p>;
   if (erorr) return <p>{erorr}</p>;
 
   return (
     <>
-      <Header></Header>
+      <Header />
+      {location.pathname === "/" && (
+        <>
+          <SearchBarFilter
+            onSearch={setSearchQuery}
+            onFilter={setfilter}
+          ></SearchBarFilter>
+        </>
+      )}
 
       <main>
-        <SearchBarFilter
-          onSearch={setSearchQuery}
-          onFilter={setfilter}
-        ></SearchBarFilter>
-        <CountryList country={filteredCountries}></CountryList>
+        <Routes>
+          <Route
+            path="/"
+            element={<CountryList country={filteredCountries} />}
+          />
+
+          <Route
+            path="/country/:countryName"
+            element={<DeatilCountry country={country} />}
+          />
+        </Routes>
       </main>
     </>
   );

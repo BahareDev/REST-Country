@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function CountryCard({ country }) {
   return (
@@ -13,7 +14,15 @@ function CountryCard({ country }) {
         </div>
 
         <div className="bg-white px-5 py-8">
-          <h5 className="font-bold text-lg mb-4">{country.name?.common}</h5>
+          <h5 className="font-bold text-lg mb-4">
+            <Link
+              to={`/country/${country.name.common}`}
+              className="hover:underline"
+            >
+              {country.name?.common || "No Name Available"}
+            </Link>
+          </h5>
+
           <ul>
             <li>
               <strong>populaion</strong>

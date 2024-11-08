@@ -68,7 +68,7 @@ export default function App() {
 
           <Route
             path="/country/:countryName"
-            element={<DeatilCountry country={country} />}
+            element={<DeatilCountry country={country}/>}
           />
         </Routes>
       </main>

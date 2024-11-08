@@ -8,7 +8,7 @@
   font-weight: 200 1000;
   font-style: normal;
   font-variation-settings: "wdth" 100, "YTLC" 500;
-  src: url(./Arz8-Task-React-Tailwind/src/assets/fonts/NunitoSans-Italic-VariableFont_YTLC\,opsz\,wdth\,wght.ttf)
+  src: url(".\assets\fonts\NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf")
     format("truetype");
 }
 

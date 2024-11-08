@@ -57,7 +57,6 @@ function FilterMenu({ onFilter }) {
         >
           <option value="">Filter by Region</option>
           <option value="Africa">Africa</option>
-          <option value="America">America</option>
           <option value="Asia">Asia</option>
           <option value="Oceania">Oceania</option>
         </select>

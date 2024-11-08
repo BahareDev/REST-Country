@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 function CountryCard({ country }) {
   return (
     <>
-      <div className="bg-white shadow-md rounded overflow-hidden m-8 max-w-full">
+      <div className="bg-white shadow-md rounded overflow-hidden m-8 ">
         {/* image Container  */}
-        <div>
+        <div className="w-full h-60 overflow-hidden">
           <img
+            className="w-full h-full object-cover"
             src={country.flags?.svg}
             alt={`Flag of ${country.name?.common}`}
           />
@@ -25,17 +26,17 @@ function CountryCard({ country }) {
 
           <ul>
             <li>
-              <strong>populaion</strong>
+              <strong>populaion: </strong>
               {country.population ? country.population.toLocaleString() : ""}
             </li>
 
             <li className="py-2">
-              <strong>Region:</strong>
+              <strong>Region: </strong>
               {country.region}
             </li>
 
             <li>
-              <strong>Capital:</strong>
+              <strong>Capital: </strong>
               {country.capital ? country.capital[0] : ""}
             </li>
           </ul>

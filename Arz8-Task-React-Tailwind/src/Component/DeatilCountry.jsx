@@ -1,13 +1,18 @@
 // import React from "react";
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 export default function DeatilCountry({ country }) {
   const { countryName } = useParams();
+  const navigate = useNavigate();
 
   const countryInfo = country.find(
     (c) => c.name?.common.toLowerCase() === countryName.toLowerCase()
   );
+
+  const borderCountries = countryInfo.borders?.map(
+    (code) => country.find((c) => c.cca3 === code)?.name.common || code
+  ) || ["N/A"];
 
   if (!country) return <p>Country not found</p>;
 
@@ -24,8 +29,8 @@ export default function DeatilCountry({ country }) {
   return (
     <>
       <section>
-        <a
-          href="#"
+        <button
+          onClick={() => navigate(-1)}
           className="bg-white flex w-[100px] justify-center items-center rounded px-8 py-3 m-8 shadow-md cursor-pointer"
         >
           <span>
@@ -40,12 +45,12 @@ export default function DeatilCountry({ country }) {
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+                d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
               />
             </svg>
           </span>
-          <span> Back </span>
-        </a>
+          <span>Back</span>
+        </button>
 
         {/* Main section*/}
         <div className="bg-white  grid grid-cols-1 m-4 items-center  overflow-hidden sm:grid-cols-3">
@@ -125,7 +130,18 @@ export default function DeatilCountry({ country }) {
             <div className=" mt-5 px-4 sm:flex  sm:items-center">
               <h3 className="font-semibold">Border Countries: </h3>
               <ul className="flex items-center my-3 mb-8 sm:mb-2 text-sm sm:ml-4">
-                <li className="bg-white drop-shadow-lg rounded py-2 px-4 mr-4"></li>
+                {borderCountries[0] !== "N/A" ? (
+                  borderCountries.map((border, index) => (
+                    <li
+                      key={index}
+                      className="bg-white drop-shadow-lg rounded py-2 px-4 mr-4"
+                    >
+                      {border}
+                    </li>
+                  ))
+                ) : (
+                  <li>No border </li>
+                )}
               </ul>
             </div>
           </div>

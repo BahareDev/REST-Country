@@ -2,7 +2,7 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
-export default function DeatilCountry({ country }) {
+export default function DeatilCountry({ country, resetHomePage }) {
   const { countryName } = useParams();
   const navigate = useNavigate();
 
@@ -30,7 +30,10 @@ export default function DeatilCountry({ country }) {
     <>
       <section>
         <button
-          onClick={() => navigate(-1)}
+          onClick={() => {
+            resetHomePage();
+            navigate("/");
+          }}
           className="bg-white flex w-[100px] justify-center items-center rounded px-8 py-3 m-8 shadow-md cursor-pointer"
         >
           <span>

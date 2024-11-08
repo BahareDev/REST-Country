@@ -7,7 +7,7 @@ export default function SearchBarFilter({ onSearch, onFilter }) {
   return (
     <>
       {/* SEARCH & Filter section */}
-      <section className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between m-8">
+      <section className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between m-8 mt-32">
         {/* SEARCH BAR */}
         <div className="flex w-full max-w-xs p-2 border shadow-md rounded mb-4 sm:mb-0">
           <span className="pr-4">
@@ -55,7 +55,8 @@ function FilterMenu({ onFilter }) {
           onChange={handleFilter}
           className="bg-gray-50 text-gray-900 text-sm rounded-lg block w-full outline-none"
         >
-          <option value="">Filter by Region</option>
+          {/* <option value="">Filter by Region</option> */}
+          <option value="All" selected>All</option>
           <option value="Africa">Africa</option>
           <option value="Asia">Asia</option>
           <option value="Oceania">Oceania</option>

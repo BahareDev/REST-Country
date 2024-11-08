@@ -3,9 +3,9 @@ import React from "react";
 export default function Header() {
   return (
     <>
-      <header className="bg-white flex justify-between items-center h-20 p-4 shadow-md md:p-10 md:h-14">
-        <h1 className="font-extrabold">Where in the world?</h1>
-        
+      <header className=" fixed w-full top-0 left-0 bg-white flex justify-between items-center h-20 p-4 shadow-md md:p-10 md:h-14 ">
+        <h1 className="font-extrabold ">Where in the world?</h1>
+
         {/* <!-- DARK mode section --> */}
         <div className="flex items-center cursor-pointer">
           <span>

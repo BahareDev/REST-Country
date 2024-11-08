@@ -13,7 +13,7 @@ const CountryURL = `https://restcountries.com/v3.1/all`;
 export default function App() {
   const [country, setCountry] = useState([]);
   const [searchQuery, setSearchQuery] = useState(""); //SEARCH state
-  const [filter, setfilter] = useState(""); //Filter state
+  const [filter, setfilter] = useState("All"); //Filter state
 
   const [loading, setLoading] = useState(true);
   const [erorr, setErorr] = useState(null);
@@ -33,13 +33,18 @@ export default function App() {
     fetchData();
   }, []);
 
+  const resetHomePage = () => {
+    setSearchQuery("");
+    // setfilter("");
+  };
+
   //SEARCH & Filter
   const filteredCountries = country.filter((item) => {
     const matchsearch = item.name?.common //Search condtion
       .toLowerCase()
       .includes(searchQuery.toLowerCase());
 
-    const matchFilter = filter ? item.region === filter : true; //Filtered condtion
+    const matchFilter = filter === "All" || item.region === filter; //Filtered condtion
     return matchsearch && matchFilter;
   });
 
@@ -68,7 +73,9 @@ export default function App() {
 
           <Route
             path="/country/:countryName"
-            element={<DeatilCountry country={country}/>}
+            element={
+              <DeatilCountry country={country} resetHomePage={resetHomePage} />
+            }
           />
         </Routes>
       </main>

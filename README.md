@@ -7,7 +7,6 @@ A React application that utilizes the REST Countries API to display information 
 - **Search** for countries by name
 - **Filter** countries by region
 - **Detailed view** of each country's information, including population, capital, region, languages, and more
-- **Dark mode** toggle for better readability in low light
 
 ## 🛠️ Technologies Used
 

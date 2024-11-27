@@ -1,6 +1,7 @@
 {
   "name": "arz8-task-react",
   "private": true,
+  "homepage": "https://BahareDev.github.io/REST-Country",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
